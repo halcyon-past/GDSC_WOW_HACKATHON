@@ -38,7 +38,7 @@ p{
   transition:2s ;
 }
 p:hover{
-  color:#000000;
+  color:#B2BEB5;
 }
 
 
@@ -59,7 +59,6 @@ p:hover{
 a {
   font-size: 1.5rem;
   padding: 1rem 3rem;
-  color: #000000;
   text-transform: uppercase;
 }
 
@@ -67,11 +66,12 @@ a {
   text-decoration: none;
   border: 1px solid rgb(0, 0, 0);
   position: relative;
+   color: #000000;
   overflow: hidden;
 }
 
 .btn:hover {
-  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+  box-shadow: 1px 1px 25px 10px rgba(0,0,0, 0.4);
 }
 
 .btn:before {
@@ -84,7 +84,7 @@ a {
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(146, 148, 248, 0.4),
+    rgba(0, 0, 0, 0.4),
     transparent
   );
   transition: all 650ms;
