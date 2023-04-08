@@ -56,11 +56,12 @@ dfr=dfr[dfr['is_water_filter']==is_water_filter][['chew','smoke','alcohol','trea
 dfr=dfr[dfr['chew']==chew][['chew','smoke','alcohol','treatment_source']]
 treatment_source = st.selectbox('Enter treatment source:',list(dfr[dfr['alcohol']==alcohol]['treatment_source'].unique()))
 
-Y=[age,sex,highest_qualification,rural,disability_status,is_water_filter,chew,smoke,alcohol,treatment_source]
+Y=[sex,highest_qualification,rural,disability_status,is_water_filter,chew,smoke,alcohol,treatment_source]
+Y=np.array(Y).reshape(1,-1)
 
 from sklearn.ensemble import RandomForestRegressor
 regressor=RandomForestRegressor(n_estimators=10,random_state=0)
-regressor.fit(df['sex','highest_qualification','rural','disability_status','is_water_filter,chew','smoke,alcohol','treatment_source'],df[''])
+regressor.fit(df[['sex','highest_qualification','rural','disability_status','is_water_filter','chew','smoke','alcohol','treatment_source']],df['age'])
 
 rf_model_predictions = regressor.predict(Y)
 # Calculate the mean absolute error of your Random Forest model on the validation data
